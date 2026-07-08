@@ -1,5 +1,38 @@
 # Jotta Strong - Plataforma Web Django 🐍⚡
+## Vista previa del proyecto
 
+### Home
+
+![Home](static/img/screenshot1.png)
+
+
+### Botones menu
+
+![Inicio](static/img/screenshot2.png)
+
+
+### Postulación al programa
+
+![Postula](static/img/screenshot3.png)
+
+
+### Parte del Formulario de postulacion
+
+![Formulario](static/img/screenshot4.png)
+
+
+### Programa Strong
+
+![Programa Strong](static/img/screenshot5.png)
+
+
+### quien soy
+
+![Admin](static/img/screenshot6.png)
+
+### Postulación exitosa
+
+![Inicio](static/img/screenshot7.png)
 
 ## Descripción del proyecto
 
