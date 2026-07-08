@@ -16,46 +16,37 @@ La plataforma permite gestionar la venta del Programa Strong Nivel Black mediant
 
 Además, cuenta con una landing page profesional orientada a nutrición deportiva, formulario de postulación y gestión de potenciales clientes.
 
-
 ---
 
 # Vista previa del proyecto
-
 
 ## Home / Landing
 
 ![Home](static/capturas/home.png)
 
-
 ## Catálogo Ecommerce
 
 ![Catálogo](static/capturas/catalogo.png)
-
 
 ## Login Cliente
 
 ![Login](static/capturas/login.png)
 
-
 ## Carrito de compras
 
 ![Carrito](static/capturas/carrito.png)
-
 
 ## Compra confirmada
 
 ![Compra](static/capturas/compra.png)
 
-
 ## Administración de órdenes
 
 ![Ordenes](static/capturas/admin_ordenes.png)
 
-
 ## Administración de productos
 
 ![Productos](static/capturas/admin_productos.png)
-
 
 ---
 
@@ -87,7 +78,6 @@ Además, cuenta con una landing page profesional orientada a nutrición deportiv
 
 ✔ Panel administrador Django.
 
-
 ---
 
 # Tecnologías utilizadas
@@ -99,7 +89,6 @@ Además, cuenta con una landing page profesional orientada a nutrición deportiv
 - JavaScript
 - SQLite
 - Git / GitHub
-
 
 ---
 
@@ -122,7 +111,6 @@ Modelos principales:
 - Motivación
 - Fecha registro
 
-
 ### Producto
 
 - Nombre
@@ -131,20 +119,17 @@ Modelos principales:
 - Duración
 - Incluye
 
-
 ### Orden
 
 - Usuario
 - Fecha
 - Total
 
-
 ### ItemOrden
 
 - Producto
 - Cantidad
 - Subtotal
-
 
 ---
 
@@ -153,7 +138,7 @@ Modelos principales:
 Clonar repositorio:
 
 ```bash
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/Jottaacevedo89/JottaStrong-Django.git
 ```
 
 Entrar al proyecto:
@@ -168,7 +153,7 @@ Crear entorno virtual:
 python -m venv venv
 ```
 
-Activar entorno:
+Activar entorno en Windows:
 
 ```bash
 venv\Scripts\activate
@@ -180,10 +165,16 @@ Instalar dependencias:
 pip install -r requirements.txt
 ```
 
-Aplicar migraciones:
+Crear base de datos y aplicar migraciones:
 
 ```bash
 python manage.py migrate
+```
+
+Crear usuario administrador:
+
+```bash
+python manage.py createsuperuser
 ```
 
 Ejecutar servidor:
@@ -192,6 +183,11 @@ Ejecutar servidor:
 python manage.py runserver
 ```
 
+Abrir en navegador:
+
+```bash
+http://127.0.0.1:8000/
+```
 
 ---
 
@@ -199,51 +195,104 @@ python manage.py runserver
 
 Landing:
 
+```bash
 http://127.0.0.1:8000/
+```
 
 Catálogo:
 
+```bash
 http://127.0.0.1:8000/programas/
+```
 
 Carrito:
 
+```bash
 http://127.0.0.1:8000/carrito/
+```
 
 Login:
 
+```bash
 http://127.0.0.1:8000/login/
+```
 
 Administrador:
 
+```bash
 http://127.0.0.1:8000/admin/
-
+```
 
 ---
 
-# Usuarios de prueba
+# Acceso administrador
 
+Desde Django Admin se pueden gestionar:
+
+- Productos del programa.
+- Órdenes de compra.
+- Usuarios registrados.
+- Postulaciones recibidas.
+
+---
+
+# Usuarios de prueba usados en desarrollo local
 
 ## Administrador
 
 Usuario:
 
+```bash
 admin
+```
 
 Contraseña:
 
+```bash
 admin123
-
+```
 
 ## Cliente
 
 Usuario:
 
+```bash
 cliente
+```
 
 Contraseña:
 
+```bash
 cliente123
+```
 
+---
+
+# Nota importante
+
+La base de datos SQLite no se incluye en el repositorio por buenas prácticas de desarrollo.
+
+Por eso, al clonar el proyecto desde GitHub, se debe crear una nueva base de datos local con:
+
+```bash
+python manage.py migrate
+```
+
+Luego se debe crear un usuario administrador con:
+
+```bash
+python manage.py createsuperuser
+```
+
+Para probar el ecommerce completo:
+
+1. Crear un superusuario.
+2. Ingresar al panel administrador.
+3. Crear productos desde Django Admin.
+4. Entrar al catálogo.
+5. Agregar productos al carrito.
+6. Confirmar compra.
+7. Revisar la orden creada en el panel administrador.
 
 ---
 
