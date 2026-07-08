@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Compra exitosa</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <h2>JOTTA STRONG</h2>
+
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/programas/">Programas</a>
+            <a href="/carrito/">Carrito</a>
+            <a href="/admin/">Admin</a>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h2>⚡ Compra confirmada</h2>
+
+        <p>
+            Tu orden fue registrada correctamente.
+        </p>
+
+        <br>
+
+        <p>
+            Número de orden: #{{ orden.id }}
+        </p>
+
+        <p>
+            Total: ${{ orden.total }} CLP
+        </p>
+
+        <br>
+
+        <a href="/programas/" class="btn">
+            Volver a programas
+        </a>
+    </section>
+
+</body>
+
+</html>

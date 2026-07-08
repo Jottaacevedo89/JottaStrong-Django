@@ -1,59 +1,96 @@
-# Jotta Strong - Plataforma Web Django 🐍⚡
-## Vista previa del proyecto
-
-### Home
-
-![Home](static/img/screenshot1.png)
-
-
-### Botones menu
-
-![Inicio](static/img/screenshot2.png)
-
-
-### Postulación al programa
-
-![Postula](static/img/screenshot3.png)
-
-
-### Parte del Formulario de postulacion
-
-![Formulario](static/img/screenshot4.png)
-
-
-### Programa Strong
-
-![Programa Strong](static/img/screenshot5.png)
-
-
-### quien soy
-
-![Admin](static/img/screenshot6.png)
-
-### Postulación exitosa
-
-![Inicio](static/img/screenshot7.png)
+# Jotta Strong Ecommerce - Django 🐍⚡
 
 ## Descripción del proyecto
 
-Jotta Strong es una aplicación web desarrollada con Python y Django para la gestión inicial de postulaciones al Programa Strong Nivel Black.
+Jotta Strong Ecommerce es una aplicación web desarrollada con Python y Django como proyecto final de portafolio Fullstack.
 
-El objetivo del proyecto es crear una plataforma que permita presentar un programa de nutrición deportiva y entrenamiento, además de capturar información de usuarios interesados mediante un formulario conectado a base de datos.
+La plataforma permite gestionar la venta del Programa Strong Nivel Black mediante un flujo completo de ecommerce:
 
+- Visualización de programas.
+- Autenticación de usuarios.
+- Catálogo conectado a base de datos.
+- Carrito de compras.
+- Confirmación de compra.
+- Registro de órdenes.
+- Administración de productos mediante Django Admin.
 
-## Funcionalidades principales
-
-- Landing page responsive.
-- Presentación del Programa Strong.
-- Sección de información profesional.
-- Formulario de postulación.
-- Validación de campos obligatorios.
-- Registro de postulantes en base de datos.
-- Panel administrativo para gestión de usuarios.
-- Mensajes dinámicos de confirmación.
+Además, cuenta con una landing page profesional orientada a nutrición deportiva, formulario de postulación y gestión de potenciales clientes.
 
 
-## Tecnologías utilizadas
+---
+
+# Vista previa del proyecto
+
+
+## Home / Landing
+
+![Home](static/img/capturas/home.png)
+
+
+## Catálogo Ecommerce
+
+![Catálogo](static/img/capturas/catalogo.png)
+
+
+## Login Cliente
+
+![Login](static/img/capturas/login.png)
+
+
+## Carrito de compras
+
+![Carrito](static/img/capturas/carrito.png)
+
+
+## Compra confirmada
+
+![Compra](static/img/capturas/compra.png)
+
+
+## Administración de órdenes
+
+![Ordenes](static/img/capturas/admin_ordenes.png)
+
+
+## Administración de productos
+
+![Productos](static/img/capturas/admin_productos.png)
+
+
+---
+
+# Funcionalidades implementadas
+
+✔ Landing page responsive.
+
+✔ Formulario de postulación conectado a base de datos.
+
+✔ Validaciones de formulario.
+
+✔ Login de usuarios.
+
+✔ Gestión de roles mediante Django Auth.
+
+✔ Catálogo dinámico desde base de datos.
+
+✔ Administración de productos.
+
+✔ Carrito de compras.
+
+✔ Agregar y eliminar productos del carrito.
+
+✔ Cálculo automático de subtotal y total.
+
+✔ Confirmación de compra.
+
+✔ Registro de órdenes asociadas al usuario.
+
+✔ Panel administrador Django.
+
+
+---
+
+# Tecnologías utilizadas
 
 - Python
 - Django
@@ -61,32 +98,159 @@ El objetivo del proyecto es crear una plataforma que permita presentar un progra
 - CSS3
 - JavaScript
 - SQLite
+- Git / GitHub
 
 
-## Arquitectura utilizada
+---
 
-El proyecto utiliza el patrón MVT propio de Django:
+# Arquitectura
 
-- Model: creación del modelo Postulante.
-- View: procesamiento de formularios y lógica.
-- Template: interfaz visual del usuario.
+El proyecto utiliza el patrón MVT de Django:
 
+## Model
 
-## Modelo principal
+Gestión de modelos y base de datos mediante ORM.
 
-Postulante:
+Modelos principales:
 
-- Nombre completo
-- Correo electrónico
-- Edad
+### Postulante
+
+- Nombre
+- Correo
 - Objetivo
-- Nivel de compromiso
-- Dificultad actual
-- Experiencia previa
+- Experiencia
 - Motivación
-- Fecha de registro
+- Fecha registro
 
 
-## Instalación del proyecto
+### Producto
+
+- Nombre
+- Descripción
+- Precio
+- Duración
+- Incluye
+
+
+### Orden
+
+- Usuario
+- Fecha
+- Total
+
+
+### ItemOrden
+
+- Producto
+- Cantidad
+- Subtotal
+
+
+---
+
+# Instalación del proyecto
 
 Clonar repositorio:
+
+```bash
+git clone URL_DEL_REPOSITORIO
+```
+
+Entrar al proyecto:
+
+```bash
+cd JottaStrong-Django
+```
+
+Crear entorno virtual:
+
+```bash
+python -m venv venv
+```
+
+Activar entorno:
+
+```bash
+venv\Scripts\activate
+```
+
+Instalar dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+Aplicar migraciones:
+
+```bash
+python manage.py migrate
+```
+
+Ejecutar servidor:
+
+```bash
+python manage.py runserver
+```
+
+
+---
+
+# Rutas principales
+
+Landing:
+
+http://127.0.0.1:8000/
+
+Catálogo:
+
+http://127.0.0.1:8000/programas/
+
+Carrito:
+
+http://127.0.0.1:8000/carrito/
+
+Login:
+
+http://127.0.0.1:8000/login/
+
+Administrador:
+
+http://127.0.0.1:8000/admin/
+
+
+---
+
+# Usuarios de prueba
+
+
+## Administrador
+
+Usuario:
+
+admin
+
+Contraseña:
+
+admin123
+
+
+## Cliente
+
+Usuario:
+
+cliente
+
+Contraseña:
+
+cliente123
+
+
+---
+
+# Autora
+
+Javiera Acevedo
+
+Nutricionista deportiva y estudiante Fullstack Python/Django.
+
+Proyecto que integra nutrición deportiva, tecnología y desarrollo web.

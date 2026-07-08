@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito Strong</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <h2>JOTTA STRONG</h2>
+
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/programas/">Programas</a>
+            <a href="/carrito/">Carrito</a>
+            <a href="/admin/">Admin</a>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h2>Carrito de compra</h2>
+
+        {% if items %}
+
+            {% for item in items %}
+
+                <div class="producto-card">
+                    <h3>{{ item.producto.nombre }}</h3>
+
+                    <p>
+                        Cantidad: {{ item.cantidad }}
+                    </p>
+
+                    <p>
+                        Subtotal: ${{ item.subtotal }} CLP
+                    </p>
+
+                    <a href="{% url 'quitar_carrito' item.producto.id %}" class="btn">
+                        Quitar
+                    </a>
+                </div>
+
+            {% endfor %}
+
+            <br>
+
+            <h2>Total: ${{ total }} CLP</h2>
+
+            <a href="{% url 'confirmar_compra' %}" class="btn">
+                Confirmar compra
+            </a>
+
+        {% else %}
+
+            <p>Tu carrito está vacío.</p>
+
+            <br>
+
+            <a href="/programas/" class="btn">
+                Ver programas
+            </a>
+
+        {% endif %}
+
+    </section>
+
+</body>
+
+</html>
