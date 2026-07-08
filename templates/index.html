@@ -1,0 +1,220 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jotta Strong | Programa Strong</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    {% if enviado %}
+    <div class="overlay-exito">
+        <div class="caja-exito">
+            <h2>⚡ Postulación enviada</h2>
+
+            <p>
+                Revisaré tu información y te contactaré para evaluar si Strong es el programa adecuado para ti.
+            </p>
+
+            <button type="button" class="boton-exito" onclick="cerrarModal()">
+                Entendido
+            </button>
+        </div>
+    </div>
+    {% endif %}
+
+    <header class="navbar">
+        <h2>JOTTA STRONG</h2>
+
+        <nav>
+            <a href="#home">Inicio</a>
+            <a href="#quien-soy">Quién soy</a>
+            <a href="#programa">Programa Strong</a>
+            <a href="#contacto">Postular</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+
+            <span class="badge">
+                Nutrición • Entrenamiento • Mentalidad
+            </span>
+
+            <h1>
+                DEJA DE <br>
+                IMPROVISAR.
+            </h1>
+
+            <h3>
+                La ciencia sirve cuando sabes aplicarla.
+            </h3>
+
+            <p>
+                Programa Strong Nivel Black:
+                12 semanas para transformar tu físico
+                con estrategia, ciencia y acompañamiento.
+            </p>
+
+            <a href="#contacto" class="btn">
+                POSTULA A STRONG ⚡
+            </a>
+
+        </div>
+
+        <div class="hero-img">
+            <img src="{% static 'img/javi.png' %}" alt="Jotta Strong">
+        </div>
+
+    </section>
+
+    <section id="quien-soy" class="section">
+        <h2>Quién soy</h2>
+
+        <p>
+            Soy Javiera Acevedo, Nutricionista con 12 años de experiencia.
+            Mi camino comenzó en nutrición clínica y hoy combino ciencia,
+            nutrición deportiva y entrenamiento de fuerza para ayudar a personas
+            a mejorar su composición corporal.
+
+            <br><br>
+
+            Strong nace para quienes quieren dejar las dietas extremas
+            y construir resultados con estrategia.
+        </p>
+    </section>
+
+    <section id="programa" class="section dark">
+        <h2>Programa Strong Nivel Black</h2>
+
+        <p>
+            Programa inicial de transformación física de 12 semanas.
+            No es solo una pauta nutricional.
+            Es un proceso completo donde trabajamos entrenamiento,
+            nutrición, hábitos y seguimiento.
+        </p>
+
+        <div class="cards">
+            <div class="card">🏋️ Entrenamiento personalizado mediante app</div>
+            <div class="card">🥗 Nutrición basada en evidencia</div>
+            <div class="card">📊 Seguimiento y ajustes constantes</div>
+            <div class="card">🧠 Mentalidad y adherencia</div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section">
+        <h2>Postula a Strong</h2>
+
+        <p>
+            Strong no es para todos.
+            Completa este filtro inicial para conocer tu objetivo,
+            compromiso y si este programa es adecuado para ayudarte.
+        </p>
+
+        <br>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Nombre completo</label>
+            {{ form.nombre }}
+            {% for error in form.nombre.errors %}
+                <small class="error-campo">⚠ {{ error }}</small>
+            {% endfor %}
+
+            <label>Correo electrónico</label>
+            {{ form.email }}
+            {% for error in form.email.errors %}
+                <small class="error-campo">⚠ {{ error }}</small>
+            {% endfor %}
+
+            <label>Edad</label>
+            {{ form.edad }}
+            {% for error in form.edad.errors %}
+                <small class="error-campo">⚠ {{ error }}</small>
+            {% endfor %}
+
+            <label>Objetivo principal</label>
+            {{ form.objetivo }}
+            {% for error in form.objetivo.errors %}
+                <small class="error-campo">⚠ {{ error }}</small>
+            {% endfor %}
+
+            <label>Nivel de compromiso (1 al 10)</label>
+            {{ form.compromiso }}
+            {% for error in form.compromiso.errors %}
+                <small class="error-campo">⚠ {{ error }}</small>
+            {% endfor %}
+
+            <label>¿Cuál es tu principal dificultad actualmente?</label>
+            {{ form.dificultad_actual }}
+            {% for error in form.dificultad_actual.errors %}
+                <small class="error-campo">⚠ {{ error }}</small>
+            {% endfor %}
+
+            <label>¿Has seguido antes un plan nutricional o entrenamiento estructurado?</label>
+            {{ form.experiencia_previa }}
+            {% for error in form.experiencia_previa.errors %}
+                <small class="error-campo">⚠ {{ error }}</small>
+            {% endfor %}
+
+            <label>¿Por qué quieres ingresar al Programa Strong?</label>
+            {{ form.motivacion }}
+            {% for error in form.motivacion.errors %}
+                <small class="error-campo">⚠ {{ error }}</small>
+            {% endfor %}
+
+            <button type="submit">ENVIAR POSTULACIÓN</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+
+    <h2>JOTTA STRONG</h2>
+
+    <p>
+        Nutrición deportiva | Entrenamiento | Mentalidad
+    </p>
+
+
+    <p>
+
+        <a 
+        href="https://www.instagram.com/jottastrong/"
+        target="_blank">
+            @jottastrong
+        </a>
+
+        •
+
+        <a 
+        href="https://www.jottastrong.cl"
+        target="_blank">
+            www.jottastrong.cl
+        </a>
+
+    </p>
+
+
+    <small>
+        © 2026 - Proyecto desarrollado con Django y Python
+    </small>
+
+</footer>
+    <script>
+        function cerrarModal() {
+            const modal = document.querySelector('.overlay-exito');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
