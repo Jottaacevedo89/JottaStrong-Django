@@ -24,37 +24,37 @@ Además, cuenta con una landing page profesional orientada a nutrición deportiv
 
 ## Home / Landing
 
-![Home](static/img/capturas/home.png)
+![Home](static/capturas/home.png)
 
 
 ## Catálogo Ecommerce
 
-![Catálogo](static/img/capturas/catalogo.png)
+![Catálogo](static/capturas/catalogo.png)
 
 
 ## Login Cliente
 
-![Login](static/img/capturas/login.png)
+![Login](static/capturas/login.png)
 
 
 ## Carrito de compras
 
-![Carrito](static/img/capturas/carrito.png)
+![Carrito](static/capturas/carrito.png)
 
 
 ## Compra confirmada
 
-![Compra](static/img/capturas/compra.png)
+![Compra](static/capturas/compra.png)
 
 
 ## Administración de órdenes
 
-![Ordenes](static/img/capturas/admin_ordenes.png)
+![Ordenes](static/capturas/admin_ordenes.png)
 
 
 ## Administración de productos
 
-![Productos](static/img/capturas/admin_productos.png)
+![Productos](static/capturas/admin_productos.png)
 
 
 ---
