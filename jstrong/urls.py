@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from landing.views import home
+from ecommerce.views import catalogo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
         path('', home, name='home'),
+        path('programas/', catalogo, name='catalogo'),
 
 ]

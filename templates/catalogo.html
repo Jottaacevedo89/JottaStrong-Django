@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Programas Strong</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <h2>JOTTA STRONG</h2>
+
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/programas/">Programas</a>
+            <a href="/admin/">Admin</a>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h2>Programas Strong</h2>
+
+        <p>
+            Elige el programa que mejor se adapte a tu objetivo.
+            Ambos tienen una duración de 12 semanas.
+        </p>
+
+        <div class="cards">
+            {% for producto in productos %}
+
+                <div class="card">
+                    <h3>{{ producto.nombre }}</h3>
+
+                    <p>{{ producto.descripcion }}</p>
+
+                    <h2>${{ producto.precio }} CLP</h2>
+
+                    <p>{{ producto.incluye|linebreaks }}</p>
+
+                    <p><strong>Duración:</strong> {{ producto.duracion }}</p>
+
+                    <a href="#" class="btn">Comprar</a>
+                </div>
+
+            {% endfor %}
+        </div>
+    </section>
+
+</body>
+
+</html>
